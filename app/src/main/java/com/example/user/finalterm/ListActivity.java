@@ -83,7 +83,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         listView.setOnItemClickListener(mItemClickListener);
 
         insertData(time, type, body, lat, lng);
-        selectAll();
 
         /*************************************************************************************************************
          스피너 관련
@@ -103,9 +102,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner sp2 = (Spinner) this.findViewById(R.id.spinner2);
         sp2.setAdapter(spinner2);
         sp2.setOnItemSelectedListener(this);
-
-
-
 
         /**************************************************************************************************************
          통계 조회 버튼 클릭 시 리절트액티비티 실행
@@ -213,23 +209,24 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         db.execSQL(sql);
     }
 
-    //데이터 선택
+    //선택된 타입의 Data 읽기
     public void selectData(String type) {
         String sql = "select * from " + tableName + " where type = '" + type + "';";
         Cursor results = db.rawQuery(sql, null);
+        results.moveToFirst();
 
         // result(Cursor 객체)가 비어 있으면 false 리턴
         while (!results.isAfterLast()) {
-            int id = results.getInt(0);
-            String time = results.getString(1);
-            String typed = results.getString(2);
-            String body = results.getString(3);
-            String lat = results.getString(4);
-            String lng = results.getString(5);
+            int id2 = results.getInt(0);
+            String time2 = results.getString(1);
+            String type2 = results.getString(2);
+            String body2 = results.getString(3);
+            String lat2 = results.getString(4);
+            String lng2 = results.getString(5);
 
-            String All = time + "\n" + id + "번째 메모\n" + typed + "\n" + body + "\n" + "lat: " + lat + " lng: " + lng;
+            String All2 = time2 + "\n" + id2 + "번째 메모\n" + type2 + "\n" + body2 + "\n" + "lat: " + lat2 + " lng: " + lng2;
 
-            BodyList.add(All);
+            BodyList.add(All2);
             results.moveToNext();
         }
         results.close();
