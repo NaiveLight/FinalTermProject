@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -198,8 +197,8 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     //데이터 저장
-    public void insertData(String time, String type, String body, String latitude, String longtitude) {
-        String sql = "insert into " + tableName + " values(NULL, '" + time + "', '" + type + "', '" + body + "', '" + latitude + "', '" + longtitude + "');";
+    public void insertData(String time, String type, String body, String latitude, String longitude) {
+        String sql = "insert into " + tableName + " values(NULL, '" + time + "', '" + type + "', '" + body + "', '" + latitude + "', '" + longitude + "');";
         db.execSQL(sql);
     }
 
@@ -215,7 +214,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         Cursor results = db.rawQuery(sql, null);
         results.moveToFirst();
 
-        // result(Cursor 객체)가 비어 있으면 false 리턴
         while (!results.isAfterLast()) {
             int id2 = results.getInt(0);
             String time2 = results.getString(1);

@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         class="com.google.android.gms.maps.MapFragment"
         android:layout_above="@+id/spinner"
-        android:layout_below="@+id/text_latitute" />
+        android:layout_below="@+id/text_latitude" />
 
     <Button
         android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="현재 위치"
-        android:id="@+id/text_latitute"
+        android:id="@+id/text_latitude"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="현재 위치"
-        android:id="@+id/text_longtitude"
+        android:id="@+id/text_longitude"
         android:layout_above="@+id/map"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

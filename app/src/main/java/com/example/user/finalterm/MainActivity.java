@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 .findFragmentById(R.id.map);
 
         //좌표 표시할 텍스트 뷰
-        txt_lat = (TextView) findViewById(R.id.text_latitute);
-        txt_lng = (TextView) findViewById(R.id.text_longtitude);
+        txt_lat = (TextView) findViewById(R.id.text_latitude);
+        txt_lng = (TextView) findViewById(R.id.text_longitude);
 
         //맵프래그먼트
         map = mapFragment.getMap();
