@@ -30,6 +30,9 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        /*************************************************************************************
+         인텐트로 전달 받은 데이타 초기화
+         *************************************************************************************/
         Int_Result = getIntent();
 
         String count1 = Int_Result.getStringExtra("학업");
@@ -41,6 +44,9 @@ public class ResultActivity extends AppCompatActivity {
         String count7 = Int_Result.getStringExtra("사고");
         String count8 = Int_Result.getStringExtra("경조사");
 
+        /*************************************************************************************
+         텍스트뷰에 받아온 통계 표기
+         *************************************************************************************/
         textView = (TextView) findViewById(R.id.text_result);
         textView.setText("현재까지 메모 통계\n" +
                 "학업: 총 " + count1 + " 건" + "\n" +
@@ -51,8 +57,6 @@ public class ResultActivity extends AppCompatActivity {
                 "휴식: 총 " + count6 + " 건" + "\n" +
                 "사고: 총 " + count7 + " 건" + "\n" +
                 "경조사: 총 " + count8 + " 건" + "\n" );
-
-
 
         /*************************************************************************************
          돌아가기 버튼 클릭 시 액티비티 finish
